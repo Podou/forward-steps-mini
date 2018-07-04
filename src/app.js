@@ -7,9 +7,9 @@
 
 import Koa from 'koa';
 import Debug from 'debug';
-import response from './middlewares/response';
 import bodyParser from 'koa-bodyparser';
-import config from './config';
+import response from './middlewares/response';
+import config from '../config';
 
 import router from './routes';
 

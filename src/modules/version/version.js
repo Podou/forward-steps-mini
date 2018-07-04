@@ -1,3 +1,5 @@
+import packageJson from '../../../package.json';
+
 export default async (ctx) => {
-  ctx.state.data = 'v0.0.2';
+  ctx.state.data = `v${packageJson.version}`;
 };

@@ -1,6 +1,6 @@
 {
-    "name": "session",
-    "script": "app.js",
+    "name": "mini_server",
+    "script": "lib/app.js",
     "cwd": "./",
     "exec_mode": "fork",
     "watch": true,

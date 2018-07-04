@@ -1,11 +1,12 @@
 {
   "name": "koa-weapp-demo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "src/app.js",
   "scripts": {
     "start": "pm2 start process.prod.json --no-daemon",
     "dev": "nodemon --config nodemon.json src/app.js",
+    "build": "babel src -d lib",
     "initdb": "npm install && node tools/initdb.js"
   },
   "author": "Jason",

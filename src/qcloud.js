@@ -2,7 +2,7 @@ import fs from 'fs';
 import qcloud from 'wafer-node-sdk';
 
 // 获取基础配置
-const configs = require('./config');
+import configs from '../config';
 
 // 获取 sdk.config
 const sdkConfig = (() => {
