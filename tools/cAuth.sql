@@ -48,7 +48,8 @@ CREATE TABLE `cSessionInfo` (
   `province` varchar(100) COLLATE utf8mb4_unicode_ci,
   `appid` varchar(100) COLLATE utf8mb4_unicode_ci,
   `timestamp` BIGINT(100) DEFAULT 0 NOT NULL
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='闯关记录';
+  `createTimestamp` BIGINT(100) DEFAULT 0 NOT NULL
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微信用户信息';
 
 
 SET FOREIGN_KEY_CHECKS = 1;

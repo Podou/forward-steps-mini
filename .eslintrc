@@ -6,6 +6,7 @@
   "rules": {
     "arrow-body-style": ["error", "always"],
     "import/no-extraneous-dependencies": 0,
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "no-buffer-constructor": 0
   }
 }
