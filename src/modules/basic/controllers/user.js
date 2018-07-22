@@ -4,6 +4,7 @@ export default async (ctx) => {
   // 具体查看：
   if (ctx.state.$wxInfo.loginState === 1) {
     // loginState 为 1，登录态校验成功
+    console.log(ctx.state.$wxInfo.loginState);
     ctx.state.data = ctx.state.$wxInfo.userinfo;
   } else {
     ctx.state.code = -1;

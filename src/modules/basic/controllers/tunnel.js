@@ -19,24 +19,24 @@ const connectedTunnelIds = [];
  * @param  {String} content 消息内容
  */
 const $broadcast = (type, content) => {
-  tunnel.broadcast(connectedTunnelIds, type, content)
-    .then((result) => {
-      const invalidTunnelIds = result.data && result.data.invalidTunnelIds || [];
+  tunnel.broadcast(connectedTunnelIds, type, content).then((result) => {
+    const invalidTunnelIds = (result.data && result.data.invalidTunnelIds) || [
+    ];
 
-      if (invalidTunnelIds.length) {
-        console.log('检测到无效的信道 IDs =>', invalidTunnelIds);
+    if (invalidTunnelIds.length) {
+      console.log('检测到无效的信道 IDs =>', invalidTunnelIds);
 
-        // 从 userMap 和 connectedTunnelIds 中将无效的信道记录移除
-        invalidTunnelIds.forEach((tunnelId) => {
-          delete userMap[tunnelId];
+      // 从 userMap 和 connectedTunnelIds 中将无效的信道记录移除
+      invalidTunnelIds.forEach((tunnelId) => {
+        delete userMap[tunnelId];
 
-          const index = connectedTunnelIds.indexOf(tunnelId);
-          if (~index) {
-            connectedTunnelIds.splice(index, 1);
-          }
-        });
-      }
-    });
+        const index = connectedTunnelIds.indexOf(tunnelId);
+        if (~index) {
+          connectedTunnelIds.splice(index, 1);
+        }
+      });
+    }
+  });
 };
 
 /**
@@ -147,7 +147,11 @@ export default {
         onConnect(packet.tunnelId);
         break;
       case 'message':
-        onMessage(packet.tunnelId, packet.content.messageType, packet.content.messageContent);
+        onMessage(
+          packet.tunnelId,
+          packet.content.messageType,
+          packet.content.messageContent,
+        );
         break;
       case 'close':
         onClose(packet.tunnelId);

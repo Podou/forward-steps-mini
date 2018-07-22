@@ -7,6 +7,9 @@
     "arrow-body-style": ["error", "always"],
     "import/no-extraneous-dependencies": 0,
     "linebreak-style": "off",
-    "no-buffer-constructor": 0
+    "no-buffer-constructor": 0,
+    "no-return-await": 0,
+    "no-restricted-syntax": 0,
+    "prefer-destructuring": 0
   }
 }

@@ -47,9 +47,30 @@ CREATE TABLE `cSessionInfo` (
   `nickName` varchar(100) COLLATE utf8mb4_unicode_ci,
   `province` varchar(100) COLLATE utf8mb4_unicode_ci,
   `appid` varchar(100) COLLATE utf8mb4_unicode_ci,
-  `timestamp` BIGINT(100) DEFAULT 0 NOT NULL
+  `timestamp` BIGINT(100) DEFAULT 0 NOT NULL,
   `createTimestamp` BIGINT(100) DEFAULT 0 NOT NULL
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微信用户信息';
 
+-- ----------------------------
+--  Table structure for `payment`
+-- ----------------------------
+CREATE TABLE IF NOT EXISTS `payment` (
+  `open_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `app_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mch_id` varchar(100) COLLATE utf8mb4_unicode_ci,
+  `nonce_str` varchar(100) COLLATE utf8mb4_unicode_ci,
+  `body` varchar(100) COLLATE utf8mb4_unicode_ci,
+  `detail` varchar(100) COLLATE utf8mb4_unicode_ci,
+  `attach` varchar(100) COLLATE utf8mb4_unicode_ci,
+  `out_trade_no` varchar(30) COLLATE utf8mb4_unicode_ci,
+  `total_fee` varchar(30) COLLATE utf8mb4_unicode_ci,
+  `spbill_create_ip` varchar(30) COLLATE utf8mb4_unicode_ci,
+  `notify_url` varchar(30) COLLATE utf8mb4_unicode_ci,
+  `trade_type` varchar(30) COLLATE utf8mb4_unicode_ci,
+  `status` varchar(30) COLLATE utf8mb4_unicode_ci,
+  `time_place_order` BIGINT(100) DEFAULT 0 NOT NULL,
+  `time_over_order` BIGINT(100) DEFAULT 0 NOT NULL,
+  `time_refund_order` BIGINT(100) DEFAULT 0 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='微信支付订单信息';payment
 
 SET FOREIGN_KEY_CHECKS = 1;

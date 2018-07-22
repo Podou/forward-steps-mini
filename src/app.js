@@ -8,6 +8,7 @@
 import Koa from 'koa';
 import Debug from 'debug';
 import bodyParser from 'koa-bodyparser';
+import xmlParser from 'koa-xml-body';
 import response from './middlewares/response';
 import config from '../config';
 
@@ -16,12 +17,12 @@ import router from './routes';
 const app = new Koa();
 const debug = Debug('koa-weapp-demo');
 
-
 // 使用响应处理中间件
 app.use(response);
 
 // 解析请求体
-app.use(bodyParser());
+app.use(xmlParser({ xmlOptions: { explicitArray: false } }));
+app.use(bodyParser({ enableTypes: ['json', 'form', 'text'] }));
 
 // 引入路由分发
 // const router = require('./routes');
