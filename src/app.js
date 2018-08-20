@@ -9,12 +9,15 @@ import Koa from 'koa';
 import Debug from 'debug';
 import bodyParser from 'koa-bodyparser';
 import xmlParser from 'koa-xml-body';
+import mongoConnection from './initialisation/mongoConnection';
 import response from './middlewares/response';
 import config from '../config';
 
 import router from './routes';
 
 const app = new Koa();
+// 初始化MongoDB
+mongoConnection();
 const debug = Debug('koa-weapp-demo');
 
 // 使用响应处理中间件

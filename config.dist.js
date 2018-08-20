@@ -17,24 +17,24 @@ const CONF = {
    * 开发环境下，MySQL 的初始密码为您的微信小程序 appid
    */
   mysql: {
-      host: 'localhost',
-      port: 3306,
-      user: '*****',
-      db: '*****',
-      pass: '*****',
-      char: 'utf8mb4'
+    host: 'localhost',
+    port: 3306,
+    user: '*****',
+    db: '*****',
+    pass: '*****',
+    char: 'utf8mb4',
   },
 
   cos: {
-      /**
+    /**
        * 地区简称
        * @查看 https://cloud.tencent.com/document/product/436/6224
        */
-      region: 'ap-guangzhou',
-      // Bucket 名称
-      fileBucket: 'qcloudtest',
-      // 文件夹
-      uploadFolder: '/Users/Fernando/Projects/mini/Switch-GO/server'
+    region: 'ap-guangzhou',
+    // Bucket 名称
+    fileBucket: 'qcloudtest',
+    // 文件夹
+    uploadFolder: '/Users/Fernando/Projects/mini/Switch-GO/server',
   },
   serverHost: '22',
   tunnelServerUrl: '22',
@@ -43,10 +43,9 @@ const CONF = {
   qcloudSecretId: '22',
   qcloudSecretKey: '22',
 
-
   // 微信登录态有效期
   wxLoginExpires: 7200,
-  wxMessageToken: 'abcdefgh'
-}
+  wxMessageToken: 'abcdefgh',
+};
 
-module.exports = CONF
+module.exports = CONF;

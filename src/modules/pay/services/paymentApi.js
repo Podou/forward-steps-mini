@@ -31,7 +31,7 @@ const getPlaceOrderOptions = (openId) => {
     out_trade_no: payUtils.getOrderId(),
     total_fee: 1,
     spbill_create_ip: '192.168.105.99',
-    notify_url: 'https://mini.duastone.com/webapp/pay/notify',
+    notify_url: 'https://mini.duastone.com/weapp/pay/notify',
     trade_type: 'JSAPI',
     openid: openId,
   };
