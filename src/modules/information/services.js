@@ -26,11 +26,14 @@ export const createInformation = async (options = {}) => {
   }
 };
 
-export const getInformations = async (openId) => {
+export const getInformations = async (openId, start = 0, limit = 10) => {
   if (!openId) {
     throw new Error('Unknow openid');
   }
-  return await InformationModel.find({ openId });
+  return await InformationModel.find({ openId })
+    .skip(start || 0)
+    .limit(limit || 10)
+    .sort({ createTime: 'desc' });
 };
 
 export const getInformation = () => {};

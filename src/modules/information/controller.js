@@ -11,9 +11,13 @@ export const createInformation = async (ctx) => {
 };
 
 export const getInformations = async (ctx) => {
-  const { openId } = ctx.query;
+  const { openId, start, count } = ctx.query;
   try {
-    const response = await services.getInformations(openId);
+    const response = await services.getInformations(
+      openId,
+      parseInt(start, 10),
+      parseInt(count, 10),
+    );
     ctx.state.data = response;
   } catch (err) {
     ctx.state.data = err.message;
